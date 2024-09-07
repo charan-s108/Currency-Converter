@@ -1,0 +1,26 @@
+{
+  "name": "currencyconverter",
+  "scripts": {
+    "post-clone": "bun install && husky && cd frontend && bun install && cd ../backend && bun install",
+    "format": "bunx prettier --write .",
+    "lint": "bunx eslint --fix .",
+    "format-and-lint": "bun run format && bun run lint",
+    "pre-commit": "prettier --check . && eslint . || (echo 'Please resolve any linting and formatting issues before committing. Run `bun run format-and-lint` to fix these issues.' && exit 1)"
+  },
+  "module": "index.ts",
+  "devDependencies": {
+    "@eslint/js": "^9.7.0",
+    "@types/bun": "latest",
+    "eslint": "9.x",
+    "eslint-config-prettier": "^9.1.0",
+    "globals": "^15.8.0",
+    "husky": "^9.1.1",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.5",
+    "typescript-eslint": "^7.16.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "type": "module"
+}

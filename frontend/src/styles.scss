@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Setting default scrollbar behavior
+
+html {
+  @apply scroll-smooth;
+}
+
+// Custom scrollbar
+
+.custom-scrollbar {
+  &::-webkit-scrollbar {
+    @apply w-[6px];
+  }
+
+  &::-webkit-scrollbar-track {
+    @apply bg-white;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @apply rounded-[3px] bg-slate-300;
+  }
+}
+
+// Custom grid for the conversion container
+
+@media (min-width: 768px) {
+  .conversion-custom-grid {
+    @apply grid grid-cols-[1.5fr_1.5fr_2.75rem_1.5fr_1fr] gap-[15px];
+  }
+}
+
+// Custom table row for the exchange rates table
+
+.custom-tr {
+  @apply h-19 border-b-[1.5px] border-slate-200;
+
+  td,
+  th {
+    @apply px-4 text-center font-semibold;
+  }
+
+  td:first-child,
+  th:first-child {
+    @apply rounded-l-md text-left;
+  }
+
+  td:last-child,
+  th:last-child {
+    @apply rounded-r-md text-right;
+  }
+}
+
+.custom-tr:last-child {
+  @apply border-b-0;
+}
